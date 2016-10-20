@@ -25,11 +25,14 @@ public class Sort {
       // EDIT HERE
       // Create function object that receives an integer and simply returns
       //    that integer
-/*
-      Function<Integer,Integer> identity = new Function<Integer,Integer>() {
 
+      Function<Integer,Integer> identity = new Function<Integer,Integer>() {
+         @Override
+         public Integer call(Integer o) {
+            return o;
+         }
       };
-*/
+
 
       JavaRDD<Integer> sortedRdd = newRdd.sortBy(identity,true,4);
 
